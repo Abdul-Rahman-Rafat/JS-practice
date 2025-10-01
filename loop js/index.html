@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab</title>
+</head>
+<body>
+    <script >
+        
+let myAdmins = ["Ahmed", "Osama", "Sayed", "Stop", "Samera"];
+let myEmployees = ["Amgad", "Samah", "Ameer", "Omar", "Othman", "Amany", "Samia", "Anwar"];
+
+document.write(`<div>We Have X Admins</div>`);
+document.write(`<div>We Have ${myAdmins.length} Admins</div>`);
+document.write(`<hr>`);
+
+let counter=0
+let idx=0
+while (myAdmins[counter]!="Stop"){
+    idx=0
+document.write(`<div>the Admin for Team ${counter+1} is ${myAdmins[counter]}</div>`);
+document.write(`<h1>Team Members: </h1>`);
+for(let i=0; i<myEmployees.length; i++){
+    if (myEmployees[i][0]==myAdmins[counter][0]){
+        document.write(`<p>-${idx+1} -  ${myEmployees[i]}</p>`);
+        idx=idx+1
+    }
+}
+document.write(`<hr>`);
+
+counter =counter+1
+}
+
+    </script>
+</body>
+</html>
