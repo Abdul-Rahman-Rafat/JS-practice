@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+function showDetails(...arg){
+let name=""
+let age = 0
+let status=false
+
+    for(let i=0 ; i<3;i++){
+        if(typeof(arg[i])=== "string"){
+            name=arg[i]
+        }
+        else if(typeof(arg[i])=== 'number'){
+            age=arg[i]
+        }
+        else{
+            status=arg[i]
+        }
+
+    }
+    console.log(`hello ${name} , Your age is ${age}  You are ${status?'available' : 'not Available'} for hire`)
+}
+showDetails("Abdo",24,false)
+showDetails("Abdo",true,24)
+showDetails(false,24,"Abdo")
+showDetails(24,"Abdo",true)
+
+    </script>
+</body>
+</html>
