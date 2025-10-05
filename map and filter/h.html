@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map filter</title>
+</head>
+<body>
+    <script>
+
+let mix = "A13BS2ZX"
+
+let map_filter = mix.split("").filter(x => !isNaN(parseInt(x))).map(
+    function(x){
+
+return Number(x*x)
+    }
+)
+console.log(map_filter)
+
+
+
+    </script>
+</body>
+</html>
