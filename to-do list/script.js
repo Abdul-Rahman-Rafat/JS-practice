@@ -1,31 +1,34 @@
 let input = document.getElementById("task_input_id");
 let addButton = document.getElementById("add_id");
 let tasksContainer = document.querySelector(".tasks");
+
 window.onload = function() {
     input.focus();
 }
 
 addButton.addEventListener("click", function() {
-    if (input.value.length === 0  ) {
+    if (input.value.length === 0) {
+
+        let oldAlert = document.querySelector(".alert");
+        if (oldAlert) oldAlert.remove();
+
         let alert_div = document.createElement("div");
         alert_div.classList.add("alert");
         alert_div.textContent = "Please enter a task!";
         document.body.prepend(alert_div);
 
-            if (document.body.contains(alert_div)) {
-               //onclick outside the alert box removes the alert box
-                window.addEventListener("dblclick", function removeAlert(e) {
-                    if (e.target !== alert_div) {
-                        document.body.removeChild(alert_div);
-                        window.removeEventListener("click", removeAlert);
-                    }
-                });
-
+        setTimeout(() => {
+            function removeAlert(e) {
+                if (!alert_div.contains(e.target)) {
+                    alert_div.remove();
+                    window.removeEventListener("click", removeAlert);
+                }
             }
-        
+                //to remove event and prevent memory leak
+            window.addEventListener("click", removeAlert);
+        }, 0);
 
-    }
-    else {
+    } else {
         let taskDiv = document.createElement("div");
         taskDiv.classList.add("task");
         taskDiv.textContent = input.value;
@@ -43,8 +46,4 @@ addButton.addEventListener("click", function() {
         input.value = "";
         input.focus();
     }
-
-
-
-})
-
+});
