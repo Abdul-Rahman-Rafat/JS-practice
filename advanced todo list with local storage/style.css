@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+}
+.input-task {
+    width: 700px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.btn-add,.btn-del, .btn-clear {
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-del {
+    background-color: #dc3545;
+}
+.clear_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-clear {
+    background-color: #dc3545;
+    margin-top: 10px;
+    display: none;
+}
+.btn-add:hover {
+    background-color: #218838;
+}
+.tasks {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.tasks {
+    background-color: white;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    font-weight: bolder;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.tasks div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.alert{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: 300px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    font-weight: bolder;
+    z-index: 999;
+    position: fixed;
+    top: calc(70% - 300px);
+    right: calc(70% - 700px);
+    color: red;
+    padding: 20px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    text-align: center;
+    text-transform: uppercase;
+}
+@keyframes fadeIn {
+    from {transform: scale(.5);}
+    to {transform: scale(1);}
+}
